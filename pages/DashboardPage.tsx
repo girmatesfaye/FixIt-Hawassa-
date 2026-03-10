@@ -69,7 +69,7 @@ const DashboardPage: React.FC<DashboardPageProps> = ({ onLogout }) => {
   };
 
   return (
-    <div className="bg-[#f8fafd] dark:bg-background-green text-[#120e1b] dark:text-white font-sans min-h-screen">
+    <div className="bg-[#f8fafd] dark:bg-background-dark text-[#120e1b] dark:text-white font-sans min-h-screen">
       <div className="flex flex-col">
         {/* Header */}
         <header className="sticky top-0 z-30 w-full border-b border-gray-200 bg-white/80 backdrop-blur-md dark:border-gray-800 dark:bg-background-dark/90 px-6 py-3">

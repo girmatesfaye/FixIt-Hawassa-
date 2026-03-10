@@ -197,7 +197,7 @@ const LandingPage: React.FC = () => {
 
       <main className="flex-grow">
         {/* Hero */}
-        <section className="relative w-full py-20 md:py-32 overflow-hidden bg-background-dark">
+        <section className="relative w-full py-20 md:py-32 overflow-hidden bg-background-green">
            <div className="absolute inset-0 z-0">
             <img src="https://picsum.photos/id/122/1600/900" className="w-full h-full object-cover opacity-30 grayscale" alt="" />
             <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/80 to-transparent" />
