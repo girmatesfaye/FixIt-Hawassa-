@@ -68,7 +68,7 @@ const ServiceRequestPage: React.FC = () => {
             <span className="material-symbols-outlined">edit_note</span>
           </div>
           <div>
-            <h1 className="text-2xl font-black text-[#120e1b] dark:text-white">Describe Your Problem</h1>
+            <h1 className="text-2xl font-bold text-[#120e1b] dark:text-white">Describe Your Problem</h1>
             <p className="text-sm text-gray-500 font-medium">Providing details helps plumbers give accurate quotes.</p>
           </div>
         </div>
@@ -77,7 +77,7 @@ const ServiceRequestPage: React.FC = () => {
         <div className="space-y-6">
           {/* Issue Description */}
           <div className="bg-white dark:bg-surface-dark rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-800">
-            <h3 className="text-sm font-black mb-4 text-[#120e1b] dark:text-white">What seems to be the issue?</h3>
+            <h3 className="text-sm font-bold mb-4 text-[#120e1b] dark:text-white">What seems to be the issue?</h3>
             <div className="relative">
               <textarea 
                 maxLength={500}
@@ -86,7 +86,7 @@ const ServiceRequestPage: React.FC = () => {
                 placeholder="E.g., The kitchen sink pipe is leaking underneath the cabinet. It started dripping yesterday and the water pressure is low..."
                 className="w-full h-32 p-4 rounded-xl bg-gray-50 dark:bg-gray-800 border-none ring-1 ring-gray-100 dark:ring-gray-700 focus:ring-2 focus:ring-primary dark:text-white text-sm resize-none"
               />
-              <div className="text-right mt-2 text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+              <div className="text-right mt-2 text-[10px] font-semibold text-gray-400 uppercase tracking-widest">
                 {description.length}/500 characters
               </div>
             </div>
@@ -95,8 +95,8 @@ const ServiceRequestPage: React.FC = () => {
           {/* Photos */}
           <div className="bg-white dark:bg-surface-dark rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-800">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-sm font-black text-[#120e1b] dark:text-white">Add Photos <span className="text-gray-400 font-medium">(Optional)</span></h3>
-              <span className="text-[10px] font-bold text-gray-400 uppercase">Max 3 images</span>
+              <h3 className="text-sm font-bold text-[#120e1b] dark:text-white">Add Photos <span className="text-gray-400 font-medium">(Optional)</span></h3>
+              <span className="text-[10px] font-semibold text-gray-400 uppercase">Max 3 images</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
               <div className="sm:col-span-3 border-2 border-dashed border-gray-200 dark:border-gray-700 rounded-xl flex flex-col items-center justify-center p-8 gap-2 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
@@ -114,7 +114,7 @@ const ServiceRequestPage: React.FC = () => {
 
           {/* Location */}
           <div className="bg-white dark:bg-surface-dark rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-800">
-            <h3 className="text-sm font-black mb-4 text-[#120e1b] dark:text-white">Location</h3>
+            <h3 className="text-sm font-bold mb-4 text-[#120e1b] dark:text-white">Location</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="relative">
                 <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[20px] text-gray-400">domain</span>
@@ -143,7 +143,7 @@ const ServiceRequestPage: React.FC = () => {
 
           {/* Maintenance Level */}
           <div className="bg-white dark:bg-surface-dark rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-800">
-            <h3 className="text-sm font-black mb-4 text-[#120e1b] dark:text-white">Maintenance Level</h3>
+            <h3 className="text-sm font-bold mb-4 text-[#120e1b] dark:text-white">Maintenance Level</h3>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <MaintenanceCard 
                 icon="add_circle" 
@@ -199,7 +199,7 @@ const MaintenanceCard: React.FC<{ icon: string, title: string, desc: string, act
       <span className="material-symbols-outlined text-[20px]">{icon}</span>
     </div>
     <div>
-      <h4 className="text-sm font-black text-[#120e1b] dark:text-white">{title}</h4>
+      <h4 className="text-sm font-bold text-[#120e1b] dark:text-white">{title}</h4>
       <p className="text-[10px] font-medium text-gray-500 leading-normal">{desc}</p>
     </div>
     <div className="absolute top-4 right-4">

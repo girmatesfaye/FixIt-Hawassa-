@@ -75,7 +75,7 @@ const LandingPage: React.FC = () => {
           <div className="flex gap-0.5">
             {[1, 2, 3, 4, 5].map(s => <span key={s} className="material-symbols-outlined text-amber-400 text-sm fill-current">star</span>)}
           </div>
-          <span className="text-[10px] font-black uppercase text-gray-400 tracking-tighter">100% Satisfied</span>
+          <span className="text-[10px] font-bold uppercase text-gray-400 tracking-wider">100% Satisfied</span>
         </div>
       )
     }
@@ -136,7 +136,7 @@ const LandingPage: React.FC = () => {
       bg: 'bg-primary/5',
       visual: (
         <div className="w-full h-16 flex flex-col items-center justify-center">
-          <span className="text-xl font-black text-primary">ETB +++</span>
+          <span className="text-xl font-extrabold text-primary">ETB +++</span>
           <div className="h-1 w-12 bg-primary/20 rounded-full overflow-hidden mt-1">
             <div className="h-full bg-primary w-2/3" />
           </div>
@@ -188,7 +188,7 @@ const LandingPage: React.FC = () => {
         <div className={`absolute right-0 top-0 h-full w-[280px] bg-white dark:bg-surface-dark shadow-2xl transition-transform duration-300 transform p-8 flex flex-col gap-8 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`} onClick={(e) => e.stopPropagation()}>
           <nav className="flex flex-col gap-6 mt-12">
             {navLinks.map((link) => (
-              <a key={link.name} className="text-lg font-bold text-[#120e1b] dark:text-white hover:text-primary" href={link.href} onClick={() => setIsMobileMenuOpen(false)}>{link.name}</a>
+              <a key={link.name} className="text-lg font-bold text-[#120e1b] dark:text-white hover:text-primary transition-colors" href={link.href} onClick={() => setIsMobileMenuOpen(false)}>{link.name}</a>
             ))}
             <Link className="text-lg font-bold text-[#120e1b] dark:text-white" to="/login" onClick={() => setIsMobileMenuOpen(false)}>Login</Link>
           </nav>
@@ -211,17 +211,17 @@ const LandingPage: React.FC = () => {
                 </span>
                 <span className="text-xs font-bold text-white uppercase tracking-widest">Active across all sub-cities of Hawassa</span>
               </div>
-              <h1 className="text-white text-4xl md:text-7xl font-black leading-tight tracking-tight mb-8">
+              <h1 className="text-white text-4xl md:text-5xl font-bold leading-tight tracking-tight mb-8">
                 Skilled Local Help,<br/> <span className="text-primary">Always Near You.</span>
               </h1>
               <p className="text-white/80 text-lg md:text-2xl mb-12 max-w-2xl mx-auto leading-relaxed">
                 Empowering Hawassa's workers by connecting them with residents for quick, reliable services.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/login" className="h-16 px-10 bg-white text-primary rounded-2xl font-black uppercase tracking-widest flex items-center justify-center gap-3 shadow-2xl hover:bg-gray-50 transition-all">
+                <Link to="/login" className="h-14 px-8 bg-white text-primary rounded-xl font-bold uppercase tracking-wider flex items-center justify-center gap-3 shadow-lg hover:bg-gray-50 transition-all">
                   <span className="material-symbols-outlined">search</span> I Need a Pro
                 </Link>
-                <Link to="/register" className="h-16 px-10 bg-primary text-white rounded-2xl font-black uppercase tracking-widest flex items-center justify-center gap-3 shadow-2xl hover:bg-primary-dark transition-all">
+                <Link to="/register" className="h-14 px-8 bg-primary text-white rounded-xl font-bold uppercase tracking-wider flex items-center justify-center gap-3 shadow-lg hover:bg-primary-dark transition-all">
                   <span className="material-symbols-outlined">engineering</span> I Want Work
                 </Link>
               </div>
@@ -232,10 +232,10 @@ const LandingPage: React.FC = () => {
         {/* Popular Services */}
         <section id="services" className="py-12 bg-white dark:bg-background-dark border-b border-gray-100 dark:border-gray-800 scroll-mt-20">
           <div className="px-4 max-w-7xl mx-auto">
-            <h3 className="text-xs font-black uppercase tracking-[0.2em] text-gray-400 mb-8 text-center">Popular Categories</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-8 text-center">Popular Categories</h3>
             <div className="flex flex-wrap justify-center gap-3">
               {['Plumbing', 'Electrical', 'Painting', 'Cleaning', 'Carpentry', 'Masonry', 'General Fixes'].map(svc => (
-                 <button key={svc} className="px-6 py-3 rounded-2xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-surface-dark hover:border-primary hover:text-primary transition-all text-sm font-bold flex items-center gap-2">
+                 <button key={svc} className="px-6 py-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-surface-dark hover:border-primary hover:text-primary transition-all text-sm font-medium flex items-center gap-2 shadow-sm">
                    <span className="material-symbols-outlined text-lg">
                       {svc === 'Plumbing' ? 'plumbing' : svc === 'Electrical' ? 'bolt' : svc === 'Painting' ? 'format_paint' : 'construction'}
                    </span>
@@ -250,19 +250,19 @@ const LandingPage: React.FC = () => {
         <section id="how-it-works" className="py-24 md:py-32 bg-[#f8fafd] dark:bg-background-dark scroll-mt-20">
           <div className="px-4 max-w-6xl mx-auto">
             <div className="text-center mb-16 space-y-4">
-              <span className="text-xs font-black uppercase tracking-[0.3em] text-primary">Process Guide</span>
-              <h2 className="text-4xl md:text-5xl font-black text-[#120e1b] dark:text-white">How it works</h2>
+              <span className="text-xs font-semibold uppercase tracking-wider text-primary">Process Guide</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#120e1b] dark:text-white tracking-tight">How it works</h2>
               <div className="flex justify-center mt-8">
                 <div className="p-1.5 bg-white dark:bg-surface-dark rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 flex gap-2">
                   <button 
                     onClick={() => setActiveTab('client')}
-                    className={`px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeTab === 'client' ? 'bg-primary text-white shadow-lg' : 'text-gray-400 hover:text-gray-600'}`}
+                    className={`px-8 py-3 rounded-xl text-xs font-bold uppercase tracking-widest transition-all ${activeTab === 'client' ? 'bg-primary text-white shadow-lg' : 'text-gray-400 hover:text-gray-600'}`}
                   >
                     I am a Client
                   </button>
                   <button 
                     onClick={() => setActiveTab('worker')}
-                    className={`px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeTab === 'worker' ? 'bg-primary text-white shadow-lg' : 'text-gray-400 hover:text-gray-600'}`}
+                    className={`px-8 py-3 rounded-xl text-xs font-bold uppercase tracking-widest transition-all ${activeTab === 'worker' ? 'bg-primary text-white shadow-lg' : 'text-gray-400 hover:text-gray-600'}`}
                   >
                     I am a Worker
                   </button>
@@ -280,17 +280,17 @@ const LandingPage: React.FC = () => {
                     <div className={`size-20 rounded-3xl ${step.bg} flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 group-hover:-rotate-3 transition-all duration-500 border border-white dark:border-gray-700`}>
                       <span className={`material-symbols-outlined text-4xl ${step.accent}`}>{step.icon}</span>
                       <div className="absolute -top-3 -right-3 size-8 rounded-full bg-white dark:bg-surface-dark border-2 border-gray-50 dark:border-gray-700 flex items-center justify-center shadow-sm">
-                        <span className="text-xs font-black text-gray-400">{step.number}</span>
+                        <span className="text-xs font-bold text-gray-400">{step.number}</span>
                       </div>
                     </div>
                     
                     <div className="text-center lg:text-left space-y-3 mb-6">
-                      <h3 className="text-xl font-black text-[#120e1b] dark:text-white group-hover:text-primary transition-colors">{step.title}</h3>
+                      <h3 className="text-lg font-bold text-[#120e1b] dark:text-white group-hover:text-primary transition-colors tracking-tight">{step.title}</h3>
                       <p className="text-sm font-medium text-gray-500 dark:text-gray-400 leading-relaxed">{step.desc}</p>
                     </div>
 
-                    <div className="w-full mt-auto bg-gray-50 dark:bg-surface-dark rounded-2xl border border-gray-100 dark:border-gray-800 p-4 transform group-hover:translate-y-[-4px] transition-transform duration-300">
-                      <p className="text-[10px] font-black uppercase text-gray-400 mb-3 tracking-widest">Visual Preview</p>
+                    <div className="w-full mt-auto bg-white dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 p-4 transform group-hover:translate-y-[-4px] transition-transform duration-300 shadow-sm">
+                      <p className="text-xs font-semibold uppercase text-gray-500 mb-3 tracking-wider">Visual Preview</p>
                       {step.visual}
                     </div>
                   </div>
@@ -299,7 +299,7 @@ const LandingPage: React.FC = () => {
             </div>
 
             <div className="mt-20 text-center">
-              <Link to={activeTab === 'client' ? '/login' : '/register'} className="inline-flex h-14 px-10 bg-primary hover:bg-primary-dark text-white rounded-2xl font-black uppercase tracking-widest items-center gap-3 shadow-xl shadow-primary/20 transition-all transform hover:scale-105 active:scale-95">
+              <Link to={activeTab === 'client' ? '/login' : '/register'} className="inline-flex h-14 px-8 bg-primary hover:bg-primary-dark text-white rounded-xl font-bold uppercase tracking-wider items-center gap-3 shadow-lg shadow-primary/20 transition-all transform hover:scale-105 active:scale-95">
                 {activeTab === 'client' ? 'Hire a Professional' : 'Start Working Today'}
                 <span className="material-symbols-outlined">chevron_right</span>
               </Link>
@@ -311,24 +311,24 @@ const LandingPage: React.FC = () => {
         <section id="about" className="py-24 bg-white dark:bg-background-dark scroll-mt-20">
           <div className="px-4 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
             <div className="space-y-4">
-              <div className="size-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center">
+              <div className="size-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-100">
                 <span className="material-symbols-outlined">verified_user</span>
               </div>
-              <h3 className="text-xl font-black dark:text-white">Verified Specialists</h3>
+              <h3 className="text-lg font-bold dark:text-white">Verified Specialists</h3>
               <p className="text-sm font-medium text-gray-500 leading-relaxed">We manually verify the ID and basic skillsets of workers to ensure a safe community for Hawassa.</p>
             </div>
             <div className="space-y-4">
-              <div className="size-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center">
+              <div className="size-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center border border-amber-100">
                 <span className="material-symbols-outlined">bolt</span>
               </div>
-              <h3 className="text-xl font-black dark:text-white">Lightning Fast</h3>
+              <h3 className="text-lg font-bold dark:text-white">Lightning Fast</h3>
               <p className="text-sm font-medium text-gray-500 leading-relaxed">Most requests in Piassa and Tabor are picked up by workers within 15 minutes of posting.</p>
             </div>
             <div className="space-y-4">
-              <div className="size-12 rounded-2xl bg-green-100 text-green-600 flex items-center justify-center">
+              <div className="size-12 rounded-xl bg-green-50 text-green-600 flex items-center justify-center border border-green-100">
                 <span className="material-symbols-outlined">payments</span>
               </div>
-              <h3 className="text-xl font-black dark:text-white">Fair Pricing</h3>
+              <h3 className="text-lg font-bold dark:text-white tracking-tight">Fair Pricing</h3>
               <p className="text-sm font-medium text-gray-500 leading-relaxed">Transparency is key. Discuss the total cost of physical work directly before any tools are touched.</p>
             </div>
           </div>
@@ -346,7 +346,7 @@ const LandingPage: React.FC = () => {
               </div>
               <p className="text-sm text-gray-400 font-bold uppercase tracking-widest">Bridging skills and needs</p>
           </div>
-          <p className="text-xs font-black text-gray-400 uppercase tracking-widest">© 2024 FixIt Hawassa. Built for Hawassa residents.</p>
+          <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">© 2024 FixIt Hawassa. Built for Hawassa residents.</p>
         </div>
       </footer>
     </div>

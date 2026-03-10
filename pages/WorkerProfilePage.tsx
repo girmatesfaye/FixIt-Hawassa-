@@ -75,7 +75,7 @@ const WorkerProfilePage: React.FC = () => {
               <div className="size-9 bg-primary rounded-lg flex items-center justify-center text-white">
                 <span className="material-symbols-outlined font-bold">handyman</span>
               </div>
-              <h2 className="text-lg font-black tracking-tight dark:text-white">FixIt Hawassa</h2>
+              <h2 className="text-lg font-bold tracking-tight dark:text-white">FixIt Hawassa</h2>
             </Link>
           </div>
 
@@ -112,7 +112,7 @@ const WorkerProfilePage: React.FC = () => {
               </div>
               <div className="flex flex-col items-center sm:items-start gap-3">
                 <div className="flex items-center gap-2">
-                  <h1 className="text-4xl font-black text-[#120e1b] dark:text-white">{worker.name}</h1>
+                  <h1 className="text-3xl font-bold tracking-tight text-[#120e1b] dark:text-white">{worker.name}</h1>
                   <span className="material-symbols-outlined text-primary text-[24px] fill-current">verified</span>
                 </div>
                 <p className="text-lg font-bold text-primary">{worker.title}</p>
@@ -121,22 +121,22 @@ const WorkerProfilePage: React.FC = () => {
                     {[1, 2, 3, 4, 5].map(s => (
                       <span key={s} className="material-symbols-outlined text-amber-400 text-[20px] fill-current">star</span>
                     ))}
-                    <span className="text-sm font-black dark:text-white ml-1">{worker.rating}</span>
+                    <span className="text-sm font-bold dark:text-white ml-1">{worker.rating}</span>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="bg-white dark:bg-surface-dark rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-800">
-              <h3 className="text-xl font-black text-[#120e1b] dark:text-white mb-6">About Me</h3>
+              <h3 className="text-xl font-bold tracking-tight text-[#120e1b] dark:text-white mb-6">About Me</h3>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">{worker.about}</p>
             </div>
 
             {/* Portfolio Section */}
             <div className="bg-white dark:bg-surface-dark rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-800">
               <div className="flex items-center justify-between mb-8">
-                <h3 className="text-xl font-black text-[#120e1b] dark:text-white">Proof of Work</h3>
-                <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">{portfolioItems.length} Projects</span>
+                <h3 className="text-xl font-bold tracking-tight text-[#120e1b] dark:text-white">Proof of Work</h3>
+                <span className="text-xs font-medium text-gray-400 uppercase tracking-widest">{portfolioItems.length} Projects</span>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {portfolioItems.map((item, idx) => (
@@ -155,11 +155,11 @@ const WorkerProfilePage: React.FC = () => {
             </div>
 
             <div className="bg-white dark:bg-surface-dark rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-800">
-              <h3 className="text-xl font-black text-[#120e1b] dark:text-white mb-8">Recent Reviews</h3>
+              <h3 className="text-xl font-bold tracking-tight text-[#120e1b] dark:text-white mb-8">Recent Reviews</h3>
               <div className="flex flex-col gap-6">
-                {recentReviews.map(review => (
+                 {recentReviews.map(review => (
                   <div key={review.id} className="border-b border-gray-50 dark:border-gray-800 pb-6 last:border-0 last:pb-0">
-                    <p className="text-sm font-black text-[#120e1b] dark:text-white mb-2">{review.name}</p>
+                    <p className="text-sm font-bold text-[#120e1b] dark:text-white mb-2">{review.name}</p>
                     <p className="text-sm text-gray-600 dark:text-gray-300 italic">"{review.comment}"</p>
                   </div>
                 ))}
@@ -170,12 +170,12 @@ const WorkerProfilePage: React.FC = () => {
           {/* Right Sidebar */}
           <div className="w-full lg:w-[360px] flex flex-col gap-6">
             <div className="bg-white dark:bg-surface-dark rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-800">
-              <h3 className="text-xl font-black text-[#120e1b] dark:text-white mb-6">Connect with {worker.name.split(' ')[0]}</h3>
+              <h3 className="text-xl font-bold tracking-tight text-[#120e1b] dark:text-white mb-6">Connect with {worker.name.split(' ')[0]}</h3>
               
               <div className="flex flex-col gap-3 mb-4">
                 <button 
                   onClick={() => setIsContactOpen(!isContactOpen)}
-                  className={`h-14 w-full flex items-center justify-between px-6 rounded-xl font-black uppercase tracking-widest transition-all ${
+                  className={`h-14 w-full flex items-center justify-between px-6 rounded-xl font-bold uppercase tracking-widest transition-all ${
                     isContactOpen ? 'bg-gray-100 dark:bg-gray-800 text-primary' : 'bg-primary hover:bg-primary-dark text-white'
                   }`}
                 >
@@ -221,7 +221,7 @@ const WorkerProfilePage: React.FC = () => {
 
               <button 
                 onClick={() => setIsReviewModalOpen(true)}
-                className="w-full h-14 bg-amber-500 hover:bg-amber-600 text-white rounded-xl font-black uppercase tracking-widest text-xs shadow-lg shadow-amber-500/10 transition-all active:scale-95 flex items-center justify-center gap-2 mb-4"
+                className="w-full h-14 bg-amber-500 hover:bg-amber-600 text-white rounded-xl font-bold uppercase tracking-widest text-xs shadow-lg shadow-amber-500/10 transition-all active:scale-95 flex items-center justify-center gap-2 mb-4"
               >
                 <span className="material-symbols-outlined">star</span>
                 Leave a Rating
@@ -239,10 +239,10 @@ const WorkerProfilePage: React.FC = () => {
             </div>
 
             <div className="bg-white dark:bg-surface-dark rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-800">
-              <h4 className="text-xs font-black uppercase tracking-widest text-gray-400 mb-4">Availability</h4>
+              <h4 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">Availability</h4>
               <div className="flex items-center gap-3">
                 <div className="size-3 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-sm font-black text-green-600 uppercase tracking-tight">Available Now</span>
+                <span className="text-sm font-bold text-green-600 uppercase tracking-tight">Available Now</span>
               </div>
               <p className="text-[10px] text-gray-500 font-medium mt-2 leading-relaxed">
                 Abebe is currently accepting requests in Hawassa.
@@ -277,8 +277,8 @@ const WorkerProfilePage: React.FC = () => {
                 className="max-h-[70vh] w-auto object-contain rounded-lg shadow-2xl animate-in zoom-in-95 duration-300"
               />
               <div className="text-center">
-                <h4 className="text-white text-2xl font-black mb-2">{portfolioItems[selectedGalleryIdx].title}</h4>
-                <p className="text-white/60 text-sm font-bold uppercase tracking-widest">Project {selectedGalleryIdx + 1} of {portfolioItems.length}</p>
+                <h4 className="text-white text-2xl font-bold tracking-tight mb-2">{portfolioItems[selectedGalleryIdx].title}</h4>
+                <p className="text-white/60 text-sm font-semibold uppercase tracking-widest">Project {selectedGalleryIdx + 1} of {portfolioItems.length}</p>
               </div>
             </div>
 
@@ -313,7 +313,7 @@ const WorkerProfilePage: React.FC = () => {
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Your Comments</label>
+            <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Your Comments</label>
             <textarea 
               placeholder="Tell others about the physical work done, punctuality, and quality..."
               className="w-full h-32 p-4 rounded-xl bg-gray-50 dark:bg-gray-800 border-none ring-1 ring-gray-100 dark:ring-gray-700 focus:ring-2 focus:ring-amber-500 text-sm resize-none dark:text-white"
@@ -322,7 +322,7 @@ const WorkerProfilePage: React.FC = () => {
 
           <button 
             onClick={() => setIsReviewModalOpen(false)}
-            className="w-full h-14 bg-amber-500 hover:bg-amber-600 text-white rounded-xl font-black uppercase tracking-widest shadow-xl shadow-amber-500/20 transition-all active:scale-95"
+            className="w-full h-14 bg-amber-500 hover:bg-amber-600 text-white rounded-xl font-semibold uppercase tracking-widest shadow-xl shadow-amber-500/20 transition-all active:scale-95"
           >
             Submit Review
           </button>
@@ -337,15 +337,15 @@ const WorkerProfilePage: React.FC = () => {
               <img src={worker.avatar} alt={worker.name} className="w-full h-full object-cover" />
             </div>
             <div className="min-w-0">
-              <h4 className="text-base font-black text-[#120e1b] dark:text-white truncate">{worker.name}</h4>
-              <p className="text-[10px] font-bold text-primary uppercase tracking-widest">{worker.title}</p>
+              <h4 className="text-base font-bold text-[#120e1b] dark:text-white truncate">{worker.name}</h4>
+              <p className="text-[10px] font-medium text-primary uppercase tracking-widest">{worker.title}</p>
             </div>
           </div>
 
           <div className="space-y-4">
             <div className="flex flex-col gap-2">
-              <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Reason</label>
-              <select className="w-full h-12 px-4 rounded-xl bg-gray-50 dark:bg-gray-800 border-none ring-1 ring-gray-100 dark:ring-gray-700 focus:ring-2 focus:ring-red-500 text-sm font-bold dark:text-white appearance-none">
+              <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Reason</label>
+              <select className="w-full h-12 px-4 rounded-xl bg-gray-50 dark:bg-gray-800 border-none ring-1 ring-gray-100 dark:ring-gray-700 focus:ring-2 focus:ring-red-500 text-sm font-medium dark:text-white appearance-none">
                 <option>Select a reason...</option>
                 <option>Overcharging</option>
                 <option>Unprofessional Behavior</option>
@@ -356,7 +356,7 @@ const WorkerProfilePage: React.FC = () => {
             </div>
 
             <div className="flex flex-col gap-2">
-              <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Description</label>
+              <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Description</label>
               <textarea 
                 placeholder="What happened?"
                 className="w-full h-28 p-4 rounded-xl bg-gray-50 dark:bg-gray-800 border-none ring-1 ring-gray-100 dark:ring-gray-700 focus:ring-2 focus:ring-red-500 text-sm resize-none dark:text-white"
@@ -367,7 +367,7 @@ const WorkerProfilePage: React.FC = () => {
           <div className="flex flex-col gap-2">
             <button 
               onClick={() => setIsReportModalOpen(false)}
-              className="w-full h-12 bg-red-500 hover:bg-red-600 text-white rounded-xl font-black uppercase tracking-widest text-xs shadow-lg shadow-red-500/20 transition-all active:scale-95"
+              className="w-full h-12 bg-red-500 hover:bg-red-600 text-white rounded-xl font-bold uppercase tracking-widest text-xs shadow-lg shadow-red-500/20 transition-all active:scale-95"
             >
               Submit Report
             </button>
@@ -381,7 +381,7 @@ const WorkerProfilePage: React.FC = () => {
 
           <div className="p-3 bg-red-50 dark:bg-red-900/10 rounded-xl border border-red-100 dark:border-red-900/30 flex gap-2">
             <span className="material-symbols-outlined text-red-500 text-[18px]">info</span>
-            <p className="text-[10px] text-red-700 dark:text-red-400 font-bold leading-tight">
+            <p className="text-[10px] text-red-700 dark:text-red-400 font-semibold leading-tight">
               Reports are reviewed by admins. False reporting may lead to account suspension.
             </p>
           </div>

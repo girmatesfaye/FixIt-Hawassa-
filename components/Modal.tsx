@@ -18,7 +18,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between border-b border-gray-50 p-5 dark:border-gray-800 shrink-0">
-          <h3 className="text-sm font-black tracking-widest text-[#120e1b] dark:text-white uppercase">
+          <h3 className="text-sm font-bold tracking-wider text-[#120e1b] dark:text-white uppercase">
             {title}
           </h3>
           <button 

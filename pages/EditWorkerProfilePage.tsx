@@ -28,7 +28,7 @@ const EditWorkerProfilePage: React.FC = () => {
             <div className="size-8 bg-[#10b981] rounded-lg flex items-center justify-center text-white">
               <span className="material-symbols-outlined font-bold text-xl">construction</span>
             </div>
-            <h2 className="text-base font-black tracking-tight text-[#065f46] dark:text-[#10b981]">FixIt Hawassa</h2>
+            <h2 className="text-base font-bold tracking-tight text-[#065f46] dark:text-[#10b981]">FixIt Hawassa</h2>
           </Link>
 
           <div className="flex items-center gap-4">
@@ -53,7 +53,7 @@ const EditWorkerProfilePage: React.FC = () => {
           <span className="text-gray-400">Profile</span>
         </nav>
 
-        <h1 className="text-4xl font-black text-[#120e1b] dark:text-white mb-2">Edit Profile</h1>
+        <h1 className="text-4xl font-bold text-[#120e1b] dark:text-white mb-2">Edit Profile</h1>
         <p className="text-sm font-medium text-gray-500 mb-10">Update your public presence and qualifications for clients in Hawassa.</p>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -70,15 +70,15 @@ const EditWorkerProfilePage: React.FC = () => {
                   <span className="material-symbols-outlined text-xl">photo_camera</span>
                 </button>
               </div>
-              <h3 className="text-sm font-black text-[#120e1b] dark:text-white">Profile Photo</h3>
-              <p className="text-[10px] font-bold text-[#10b981] mt-1 uppercase tracking-wider">This will be displayed on your public profile card.</p>
+              <h3 className="text-sm font-bold text-[#120e1b] dark:text-white">Profile Photo</h3>
+              <p className="text-[10px] font-semibold text-[#10b981] mt-1 uppercase tracking-wider">This will be displayed on your public profile card.</p>
             </div>
 
             {/* Personal Details Card */}
             <div className="bg-white dark:bg-surface-dark rounded-2xl p-8 border border-gray-100 dark:border-gray-800 shadow-sm space-y-6">
               <div className="flex items-center gap-3 mb-2">
                 <span className="material-symbols-outlined text-[#10b981]">person</span>
-                <h3 className="text-lg font-black text-[#120e1b] dark:text-white">Personal Details</h3>
+                <h3 className="text-lg font-bold text-[#120e1b] dark:text-white">Personal Details</h3>
               </div>
 
               <div className="space-y-4">
@@ -159,7 +159,7 @@ const EditWorkerProfilePage: React.FC = () => {
             <div className="bg-white dark:bg-surface-dark rounded-2xl p-8 border border-gray-100 dark:border-gray-800 shadow-sm space-y-6">
               <div className="flex items-center gap-3 mb-2">
                 <span className="material-symbols-outlined text-[#10b981]">bolt</span>
-                <h3 className="text-lg font-black text-[#120e1b] dark:text-white">Skills & Categories</h3>
+                <h3 className="text-lg font-bold text-[#120e1b] dark:text-white">Skills & Categories</h3>
               </div>
 
               <div className="space-y-6">
@@ -184,7 +184,7 @@ const EditWorkerProfilePage: React.FC = () => {
                 </div>
 
                 <div className="space-y-3">
-                  <h4 className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Popular Suggestions</h4>
+                  <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Popular Suggestions</h4>
                   <div className="flex flex-wrap gap-2">
                     {popularSuggestions.map(s => (
                       <button 
@@ -205,7 +205,7 @@ const EditWorkerProfilePage: React.FC = () => {
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center gap-3">
                   <span className="material-symbols-outlined text-[#10b981]">image</span>
-                  <h3 className="text-lg font-black text-[#120e1b] dark:text-white">Portfolio Gallery</h3>
+                  <h3 className="text-lg font-bold text-[#120e1b] dark:text-white">Portfolio Gallery</h3>
                 </div>
                 <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">2/10 uploaded</span>
               </div>

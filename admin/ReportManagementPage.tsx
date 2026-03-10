@@ -44,7 +44,7 @@ const ReportManagementPage: React.FC = () => {
   return (
     <div className="p-8 space-y-8">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-black text-[#120e1b]">Report Management</h1>
+        <h1 className="text-xl font-bold text-[#120e1b]">Report Management</h1>
       </div>
 
       {/* Stats Cards */}
@@ -52,19 +52,19 @@ const ReportManagementPage: React.FC = () => {
         {stats.map((stat, i) => (
           <div key={i} className={`bg-white rounded-2xl p-6 shadow-sm border-l-4 ${stat.border} relative overflow-hidden`}>
             <div className="flex justify-between items-start">
-              <div className="space-y-1">
-                <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">{stat.label}</p>
+              <div className="space-y-1.5">
+                <p className="text-xs font-semibold text-gray-500 tracking-wider uppercase">{stat.label}</p>
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl font-black text-[#120e1b]">{stat.value}</span>
+                  <span className="text-2xl font-bold text-[#120e1b]">{stat.value}</span>
                   {stat.success && (
-                    <span className="px-2 py-0.5 bg-green-50 text-[10px] font-black text-green-600 rounded-full border border-green-100">
+                    <span className="px-2 py-0.5 bg-green-50 text-[10px] font-semibold text-green-600 rounded-md border border-green-200">
                       {stat.sub}
                     </span>
                   )}
                 </div>
                 {!stat.success && (
                   <div className="flex items-center gap-1.5 mt-1">
-                    {stat.alert && <span className="px-2 py-0.5 bg-red-50 text-[10px] font-black text-red-500 rounded-md">Open complaints</span>}
+                    {stat.alert && <span className="px-2 py-0.5 bg-red-50 text-[10px] font-bold text-red-500 rounded-md">Open complaints</span>}
                     {!stat.alert && <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{stat.sub}</span>}
                   </div>
                 )}
@@ -103,14 +103,14 @@ const ReportManagementPage: React.FC = () => {
           <div key={report.id} className="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden flex flex-col">
             <div className="p-8 space-y-6 flex-1">
               <div className="flex justify-between items-start">
-                <div className="space-y-1">
-                  <span className="px-3 py-1 bg-red-50 text-red-500 text-[10px] font-black uppercase tracking-widest rounded-full">
+                <div className="space-y-1.5">
+                  <span className="px-2.5 py-1 bg-red-50 text-red-600 border border-red-100 text-[10px] font-semibold uppercase tracking-wider rounded-md">
                     {report.category}
                   </span>
-                  <h3 className="text-xl font-black text-[#120e1b] mt-2">{report.title}</h3>
-                  <p className="text-[10px] font-bold text-gray-400 uppercase">Report ID: {report.id}</p>
+                  <h3 className="text-lg font-semibold text-[#120e1b] mt-2 block">{report.title}</h3>
+                  <p className="text-[10px] font-medium text-gray-500 uppercase">Report ID: {report.id}</p>
                 </div>
-                <span className="text-[10px] font-bold text-gray-400">{report.time}</span>
+                <span className="text-[10px] font-medium text-gray-500 mt-1">{report.time}</span>
               </div>
 
               <div className="bg-gray-50/50 rounded-2xl p-6 border border-gray-50">
@@ -121,12 +121,12 @@ const ReportManagementPage: React.FC = () => {
 
               <div className="flex items-center gap-6">
                 <div className="flex-1 p-3 rounded-2xl border border-gray-50 bg-gray-50/20 flex items-center gap-3">
-                  <div className="size-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-black text-xs">
+                  <div className="size-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xs">
                     {report.reporter.avatar.length === 2 ? report.reporter.avatar : <img src={report.reporter.avatar} className="rounded-full" />}
                   </div>
                   <div>
-                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-tight">Reporter (Client)</p>
-                    <p className="text-sm font-black text-[#120e1b]">{report.reporter.name}</p>
+                    <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">Reporter (Client)</p>
+                    <p className="text-sm font-semibold text-[#120e1b]">{report.reporter.name}</p>
                   </div>
                 </div>
 
@@ -137,8 +137,8 @@ const ReportManagementPage: React.FC = () => {
                 <div className="flex-1 p-3 rounded-2xl border border-gray-50 bg-gray-50/20 flex items-center gap-3">
                   <img src={report.reported.avatar} className="size-10 rounded-full bg-gray-100" />
                   <div>
-                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-tight">Reported (Worker)</p>
-                    <p className="text-sm font-black text-[#120e1b]">{report.reported.name}</p>
+                    <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">Reported (Worker)</p>
+                    <p className="text-sm font-semibold text-[#120e1b]">{report.reported.name}</p>
                   </div>
                 </div>
               </div>
@@ -151,7 +151,7 @@ const ReportManagementPage: React.FC = () => {
               </button>
               <button 
                 onClick={() => handleOpenResolveModal(report.id)}
-                className="flex-1 h-12 rounded-xl bg-[#2635af] hover:bg-[#1e2a8a] text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-blue-900/10 transition-all active:scale-[0.98]"
+                className="flex-1 h-12 rounded-xl bg-primary hover:bg-primary-dark text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-primary/10 transition-all active:scale-[0.98]"
               >
                 <span className="material-symbols-outlined text-xl">check_circle</span>
                 Resolve Report
@@ -174,51 +174,51 @@ const ReportManagementPage: React.FC = () => {
 
           <div className="space-y-6">
             <div className="flex flex-col gap-3">
-              <h4 className="text-sm font-black text-[#120e1b] uppercase tracking-tight">Resolution Action Summary</h4>
+              <h4 className="text-sm font-bold text-[#120e1b] uppercase tracking-tight">Resolution Action Summary</h4>
               <div className="grid grid-cols-2 gap-4">
                 <button 
                   onClick={() => setResolutionAction('warning')}
                   className={`relative flex flex-col items-start p-4 rounded-xl border-2 transition-all text-left ${
-                    resolutionAction === 'warning' ? 'border-[#2635af] bg-blue-50/50 ring-4 ring-blue-100' : 'border-gray-100 hover:border-gray-200'
+                    resolutionAction === 'warning' ? 'border-primary bg-primary/5 ring-4 ring-primary/20' : 'border-gray-100 hover:border-gray-200'
                   }`}
                 >
-                  <span className={`text-sm font-black ${resolutionAction === 'warning' ? 'text-[#120e1b]' : 'text-gray-600'}`}>Warning Issued</span>
+                  <span className={`text-sm font-bold ${resolutionAction === 'warning' ? 'text-[#120e1b]' : 'text-gray-600'}`}>Warning Issued</span>
                   <span className="text-[10px] font-bold text-gray-400 mt-0.5">Official warning to user</span>
                   {resolutionAction === 'warning' && (
-                    <span className="absolute top-3 right-3 material-symbols-outlined text-[#2635af] text-[20px] fill-current">check_circle</span>
+                    <span className="absolute top-3 right-3 material-symbols-outlined text-primary text-[20px] fill-current">check_circle</span>
                   )}
                 </button>
                 <button 
                   onClick={() => setResolutionAction('none')}
                   className={`relative flex flex-col items-start p-4 rounded-xl border-2 transition-all text-left ${
-                    resolutionAction === 'none' ? 'border-[#2635af] bg-blue-50/50 ring-4 ring-blue-100' : 'border-gray-100 hover:border-gray-200'
+                    resolutionAction === 'none' ? 'border-primary bg-primary/5 ring-4 ring-primary/20' : 'border-gray-100 hover:border-gray-200'
                   }`}
                 >
-                  <span className={`text-sm font-black ${resolutionAction === 'none' ? 'text-[#120e1b]' : 'text-gray-600'}`}>No Action Taken</span>
+                  <span className={`text-sm font-bold ${resolutionAction === 'none' ? 'text-[#120e1b]' : 'text-gray-600'}`}>No Action Taken</span>
                   <span className="text-[10px] font-bold text-gray-400 mt-0.5">Dismiss report as invalid</span>
                   {resolutionAction === 'none' && (
-                    <span className="absolute top-3 right-3 material-symbols-outlined text-[#2635af] text-[20px] fill-current">check_circle</span>
+                    <span className="absolute top-3 right-3 material-symbols-outlined text-primary text-[20px] fill-current">check_circle</span>
                   )}
                 </button>
               </div>
             </div>
 
             <div className="flex flex-col gap-2">
-              <label className="text-sm font-black text-[#120e1b] uppercase tracking-tight">Internal Notes</label>
+              <label className="text-sm font-bold text-[#120e1b] uppercase tracking-tight">Internal Notes</label>
               <textarea 
                 placeholder="Document the reason for this decision and any evidence reviewed..."
-                className="w-full h-32 p-4 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#2635af] focus:border-transparent text-sm resize-none"
+                className="w-full h-32 p-4 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent text-sm resize-none"
               />
             </div>
 
             <div className="flex items-center justify-between p-4 rounded-xl bg-gray-50 border border-gray-100">
               <div className="flex flex-col">
-                <span className="text-sm font-black text-[#120e1b]">Notify both parties</span>
+                <span className="text-sm font-bold text-[#120e1b]">Notify both parties</span>
                 <span className="text-[10px] font-bold text-gray-400">Send automated resolution update email</span>
               </div>
               <button 
                 onClick={() => setNotifyParties(!notifyParties)}
-                className={`w-12 h-6 rounded-full relative transition-colors ${notifyParties ? 'bg-[#2635af]' : 'bg-gray-300'}`}
+                className={`w-12 h-6 rounded-full relative transition-colors ${notifyParties ? 'bg-primary' : 'bg-gray-300'}`}
               >
                 <div className={`absolute top-1 size-4 bg-white rounded-full transition-all ${notifyParties ? 'left-7' : 'left-1'}`} />
               </button>
@@ -234,7 +234,7 @@ const ReportManagementPage: React.FC = () => {
             </button>
             <button 
               onClick={() => setIsResolveModalOpen(false)}
-              className="flex-1 h-12 rounded-xl bg-[#2635af] hover:bg-[#1e2a8a] text-white font-bold shadow-lg shadow-blue-900/10 transition-all active:scale-[0.98] flex items-center justify-center gap-2"
+              className="flex-1 h-12 rounded-xl bg-primary hover:bg-primary-dark text-white font-bold shadow-lg shadow-primary/10 transition-all active:scale-[0.98] flex items-center justify-center gap-2"
             >
               <span className="material-symbols-outlined text-[20px]">verified</span>
               Confirm Resolution
@@ -244,13 +244,13 @@ const ReportManagementPage: React.FC = () => {
       </Modal>
 
       {/* Pagination Footer */}
-      <div className="flex items-center justify-between border-t border-gray-100 pt-8">
-        <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">
-          Showing <span className="text-[#120e1b]">1-4</span> of <span className="text-[#120e1b]">482</span> reports
+      <div className="flex items-center justify-between border-t border-gray-200 pt-6">
+        <p className="text-xs font-medium text-gray-500 tracking-wider">
+          Showing <span className="text-[#120e1b] font-semibold">1-4</span> of <span className="text-[#120e1b] font-semibold">482</span> reports
         </p>
         <div className="flex items-center gap-1">
           <button className="h-9 px-4 rounded-lg text-xs font-bold text-gray-400 hover:text-red-500 disabled:opacity-50">Previous</button>
-          <button className="size-9 rounded-lg bg-[#2635af] text-white text-xs font-black">1</button>
+          <button className="size-9 rounded-lg bg-primary text-white text-xs font-bold">1</button>
           <button className="size-9 rounded-lg text-xs font-bold text-gray-500 hover:bg-gray-100 transition-colors">2</button>
           <span className="px-2 text-gray-300">...</span>
           <button className="h-9 px-4 rounded-lg text-xs font-bold text-gray-500 hover:text-red-500">Next</button>

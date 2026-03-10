@@ -26,15 +26,15 @@ const WorkerHubPage: React.FC<WorkerHubPageProps> = ({ onLogout }) => {
               <span className="material-symbols-outlined font-bold">construction</span>
             </div>
             <div>
-              <h2 className="text-sm font-black text-[#120e1b] dark:text-white">Worker Hub</h2>
-              <p className="text-[10px] font-bold text-green-500 uppercase tracking-widest">FixIt Hawassa</p>
+              <h2 className="text-sm font-bold text-[#120e1b] dark:text-white">Worker Hub</h2>
+              <p className="text-[10px] font-semibold text-green-500 uppercase tracking-widest">FixIt Hawassa</p>
             </div>
           </div>
         </div>
 
         <div className="p-6">
           <nav className="flex flex-col gap-2">
-            <button className="flex items-center gap-3 px-5 py-3.5 rounded-2xl bg-primary/10 text-primary font-black text-sm text-left transition-all">
+            <button className="flex items-center gap-3 px-5 py-3.5 rounded-2xl bg-primary/10 text-primary font-bold text-sm text-left transition-all">
               <span className="material-symbols-outlined">account_circle</span>
               My Profile
             </button>
@@ -51,7 +51,7 @@ const WorkerHubPage: React.FC<WorkerHubPageProps> = ({ onLogout }) => {
         <div className="mt-auto p-6 border-t border-gray-50 dark:border-gray-800">
           <button 
             onClick={onLogout}
-            className="flex items-center gap-3 px-5 py-3.5 w-full text-gray-400 hover:text-red-500 font-bold text-sm transition-colors"
+            className="flex items-center gap-3 px-5 py-3.5 w-full text-gray-400 hover:text-red-500 font-semibold text-sm transition-colors"
           >
             <span className="material-symbols-outlined">logout</span>
             Logout Account
@@ -69,7 +69,7 @@ const WorkerHubPage: React.FC<WorkerHubPageProps> = ({ onLogout }) => {
             </div>
             <button 
               onClick={() => navigate('/worker/edit-profile')}
-              className="h-11 px-6 bg-[#120e1b] hover:bg-black text-white rounded-xl text-xs font-black uppercase tracking-widest transition-all"
+              className="h-11 px-6 bg-[#120e1b] hover:bg-black text-white rounded-xl text-xs font-bold uppercase tracking-widest transition-all"
             >
               Update Profile
             </button>
@@ -91,7 +91,7 @@ const WorkerHubPage: React.FC<WorkerHubPageProps> = ({ onLogout }) => {
                 <span className="material-symbols-outlined text-3xl">sensors</span>
               </div>
               <div className="flex flex-col">
-                <h3 className="text-xl font-black dark:text-white">
+                <h3 className="text-xl font-bold dark:text-white">
                   {isAvailable ? 'You are visible to clients' : 'Your profile is hidden'}
                 </h3>
                 <p className="text-sm font-medium text-gray-500">
@@ -116,13 +116,13 @@ const WorkerHubPage: React.FC<WorkerHubPageProps> = ({ onLogout }) => {
                   <span className="material-symbols-outlined text-3xl">add_a_photo</span>
                 </div>
                 <div>
-                  <h4 className="text-lg font-black text-amber-900 dark:text-amber-100">Finish setting up your shop</h4>
+                  <h4 className="text-lg font-bold text-amber-900 dark:text-amber-100">Finish setting up your shop</h4>
                   <p className="text-sm font-medium text-amber-700">Add photos of your physical work to build trust.</p>
                 </div>
               </div>
               <button 
                 onClick={() => navigate('/worker/edit-profile')}
-                className="h-11 px-8 bg-amber-500 hover:bg-amber-600 text-white rounded-xl text-sm font-black uppercase tracking-widest shadow-lg shadow-amber-500/20"
+                className="h-11 px-8 bg-amber-500 hover:bg-amber-600 text-white rounded-xl text-sm font-bold uppercase tracking-widest shadow-lg shadow-amber-500/20"
               >
                 Upload Photos
               </button>
@@ -139,13 +139,13 @@ const WorkerHubPage: React.FC<WorkerHubPageProps> = ({ onLogout }) => {
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-1">
-                      <h2 className="text-2xl font-black dark:text-white">Abebe Kebede</h2>
+                      <h2 className="text-2xl font-bold dark:text-white">Abebe Kebede</h2>
                       <span className="material-symbols-outlined text-primary fill-current text-[20px]">verified</span>
                     </div>
                     <p className="text-sm font-bold text-primary mb-4">Master Plumber</p>
                     <div className="flex flex-wrap gap-2">
                       {skills.map(skill => (
-                        <span key={skill} className="px-3 py-1 bg-gray-50 dark:bg-gray-800 text-[10px] font-black uppercase tracking-widest text-gray-500 rounded-lg">
+                        <span key={skill} className="px-3 py-1 bg-gray-50 dark:bg-gray-800 text-[10px] font-bold uppercase tracking-widest text-gray-500 rounded-lg">
                           {skill}
                         </span>
                       ))}
@@ -153,7 +153,7 @@ const WorkerHubPage: React.FC<WorkerHubPageProps> = ({ onLogout }) => {
                   </div>
                 </div>
                 <div className="p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl">
-                  <p className="text-xs font-black uppercase tracking-widest text-gray-400 mb-2">My Bio</p>
+                  <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">My Bio</p>
                   <p className="text-sm text-gray-600 leading-relaxed italic">"Providing reliable plumbing services in Hawassa for over 8 years. I specialize in home installations and emergency leak fixes. I am always punctual and offer fair pricing for physical work."</p>
                 </div>
               </div>
@@ -161,7 +161,7 @@ const WorkerHubPage: React.FC<WorkerHubPageProps> = ({ onLogout }) => {
               {/* Physical Service Gallery - The Proof */}
               <div className="bg-white dark:bg-surface-dark rounded-3xl p-8 shadow-sm border border-gray-50 dark:border-gray-800">
                 <div className="flex items-center justify-between mb-8">
-                  <h3 className="text-xl font-black dark:text-white">Service Gallery</h3>
+                  <h3 className="text-xl font-bold dark:text-white">Service Gallery</h3>
                   <button className="text-sm font-bold text-primary">View All</button>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -180,12 +180,12 @@ const WorkerHubPage: React.FC<WorkerHubPageProps> = ({ onLogout }) => {
             <div className="space-y-8">
               {/* Ratings - Performance based on physical work */}
               <div className="bg-white dark:bg-surface-dark rounded-3xl p-8 shadow-sm border border-gray-50 dark:border-gray-800 text-center">
-                <p className="text-xs font-black uppercase tracking-widest text-gray-400 mb-4">Worker Reputation</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">Worker Reputation</p>
                 <div className="flex items-center justify-center gap-2 mb-2">
-                  <span className="text-5xl font-black dark:text-white">4.9</span>
+                  <span className="text-5xl font-bold dark:text-white">4.9</span>
                   <span className="material-symbols-outlined text-amber-400 text-4xl fill-current">star</span>
                 </div>
-                <p className="text-[10px] font-bold text-green-500 uppercase tracking-widest">Excellent Rating</p>
+                <p className="text-[10px] font-semibold text-green-500 uppercase tracking-widest">Excellent Rating</p>
                 <div className="mt-6 pt-6 border-t border-gray-50 dark:border-gray-800">
                   <div className="flex justify-between text-xs font-bold text-gray-500 mb-2">
                     <span>Profile Views</span>
@@ -200,18 +200,18 @@ const WorkerHubPage: React.FC<WorkerHubPageProps> = ({ onLogout }) => {
 
               {/* Direct Contact Options */}
               <div className="bg-[#120e1b] rounded-3xl p-8 shadow-xl text-white">
-                <h4 className="text-lg font-black mb-6 flex items-center gap-2">
+                <h4 className="text-lg font-bold mb-6 flex items-center gap-2">
                   <span className="material-symbols-outlined text-green-500">contact_phone</span>
                   My Contact Info
                 </h4>
                 <div className="space-y-4">
                   <div className="p-4 bg-white/5 rounded-2xl">
-                    <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Phone</p>
-                    <p className="text-sm font-bold">+251 911 234 567</p>
+                    <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-widest mb-1">Phone</p>
+                    <p className="text-sm font-medium">+251 911 234 567</p>
                   </div>
                   <div className="p-4 bg-white/5 rounded-2xl">
-                    <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Telegram</p>
-                    <p className="text-sm font-bold">@abebe_plumb</p>
+                    <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-widest mb-1">Telegram</p>
+                    <p className="text-sm font-medium">@abebe_plumb</p>
                   </div>
                 </div>
                 <p className="text-[10px] text-gray-500 mt-6 leading-relaxed italic">

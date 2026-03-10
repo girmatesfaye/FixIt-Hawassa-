@@ -37,17 +37,17 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
           />
           <div className="absolute inset-0 hero-overlay flex flex-col justify-end p-16 text-white">
             <div className="max-w-md">
-              <h2 className="text-5xl font-black leading-tight tracking-tight mb-6">Connecting Hawassa's Best Talent with You</h2>
-              <p className="text-lg font-medium text-white/90">Find skilled informal workers for any task. Reliable, verified, and just a click away.</p>
+              <h2 className="text-4xl lg:text-5xl font-bold leading-tight tracking-tight mb-6">Connecting Hawassa's Best Talent with You</h2>
+              <p className="text-base lg:text-lg font-medium text-white/90">Find skilled informal workers for any task. Reliable, verified, and just a click away.</p>
             </div>
             <div className="mt-12 flex gap-8">
               <div className="flex flex-col">
-                <span className="text-3xl font-black">500+</span>
-                <span className="text-xs uppercase tracking-widest text-white/70">Verified Pros</span>
+                <span className="text-2xl lg:text-3xl font-bold">500+</span>
+                <span className="text-xs uppercase tracking-wider text-white/80">Verified Pros</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-3xl font-black">24/7</span>
-                <span className="text-xs uppercase tracking-widest text-white/70">Support</span>
+                <span className="text-2xl lg:text-3xl font-bold">24/7</span>
+                <span className="text-xs uppercase tracking-wider text-white/80">Support</span>
               </div>
             </div>
           </div>
@@ -56,8 +56,8 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
         <div className="flex-grow flex items-center justify-center p-4 sm:p-8 lg:w-1/2 lg:pt-24 bg-background-light dark:bg-background-dark">
           <div className="w-full max-w-[440px] bg-white dark:bg-[#1a2230] rounded-xl shadow-sm border border-[#e7ebf3] dark:border-gray-800 p-6 sm:p-10 flex flex-col gap-8">
             <div className="flex flex-col gap-2 text-center">
-              <h1 className="text-[#0d121b] dark:text-white text-3xl sm:text-4xl font-black leading-tight tracking-tight">Welcome Back</h1>
-              <p className="text-[#4c669a] dark:text-gray-400 text-base font-normal">Log in to your FixIt account</p>
+              <h1 className="text-[#0d121b] dark:text-white text-2xl sm:text-3xl font-bold leading-tight tracking-tight">Welcome Back</h1>
+              <p className="text-gray-500 dark:text-gray-400 text-sm sm:text-base font-medium">Log in to your FixIt account</p>
             </div>
 
             <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
@@ -106,7 +106,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
               <div className="flex flex-col gap-4">
                 <button 
                   type="submit"
-                  className="flex items-center justify-center w-full h-12 rounded-lg bg-primary hover:bg-primary-dark text-white font-bold text-base transition-colors shadow-sm"
+                  className="flex items-center justify-center w-full h-12 rounded-lg bg-primary hover:bg-primary-dark text-white font-medium text-base transition-colors shadow-sm"
                 >
                   Log In
                 </button>
@@ -119,7 +119,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
                 <Link className="text-primary font-bold hover:underline ml-1" to="/register">Sign up</Link>
               </p>
               <div className="pt-2">
-                <Link to="/admin" className="text-xs font-bold text-gray-400 hover:text-primary uppercase tracking-widest flex items-center justify-center gap-1 transition-colors">
+                <Link to="/admin" className="text-xs font-semibold text-gray-400 hover:text-primary uppercase tracking-wider flex items-center justify-center gap-1 transition-colors">
                   <span className="material-symbols-outlined text-[16px]">admin_panel_settings</span>
                   Access Admin Portal
                 </Link>

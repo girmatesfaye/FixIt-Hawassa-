@@ -28,7 +28,7 @@ const MessagesPage: React.FC = () => {
               <div className="size-9 bg-primary rounded-lg flex items-center justify-center text-white">
                 <span className="material-symbols-outlined font-bold">handyman</span>
               </div>
-              <h2 className="text-base font-black tracking-tight dark:text-white">FixIt Hawassa</h2>
+              <h2 className="text-base font-bold tracking-tight dark:text-white">FixIt Hawassa</h2>
             </Link>
           </div>
           <nav className="hidden md:flex items-center gap-8">
@@ -67,11 +67,11 @@ const MessagesPage: React.FC = () => {
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex justify-between items-start mb-0.5">
-                    <h4 className="text-sm font-black text-[#120e1b] dark:text-white truncate">{contact.name}</h4>
-                    <span className="text-[10px] font-bold text-gray-400">{contact.time}</span>
+                    <h4 className="text-sm font-bold text-[#120e1b] dark:text-white truncate">{contact.name}</h4>
+                    <span className="text-[10px] font-semibold text-gray-400">{contact.time}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <p className={`text-xs truncate ${contact.unread > 0 ? 'font-bold text-gray-800 dark:text-gray-200' : 'text-gray-500'}`}>{contact.lastMsg}</p>
+                    <p className={`text-xs truncate ${contact.unread > 0 ? 'font-semibold text-gray-800 dark:text-gray-200' : 'text-gray-500'}`}>{contact.lastMsg}</p>
                     {contact.unread > 0 && (
                       <span className="size-5 rounded-full bg-primary text-white text-[10px] font-bold flex items-center justify-center">{contact.unread}</span>
                     )}
@@ -91,8 +91,8 @@ const MessagesPage: React.FC = () => {
                 <img src={contacts[selectedContact].avatar} alt="" />
               </div>
               <div>
-                <h3 className="text-sm font-black text-[#120e1b] dark:text-white">{contacts[selectedContact].name}</h3>
-                <p className="text-[10px] font-bold text-green-500 uppercase tracking-widest">{contacts[selectedContact].status}</p>
+                <h3 className="text-sm font-bold text-[#120e1b] dark:text-white">{contacts[selectedContact].name}</h3>
+                <p className="text-[10px] font-semibold text-green-500 uppercase tracking-widest">{contacts[selectedContact].status}</p>
               </div>
             </div>
             <div className="flex items-center gap-4 text-gray-400">
@@ -105,13 +105,13 @@ const MessagesPage: React.FC = () => {
           {/* Messages List */}
           <div className="flex-1 overflow-y-auto p-6 flex flex-col gap-6">
             <div className="text-center">
-              <span className="text-[10px] font-bold text-gray-400 uppercase bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">Today</span>
+              <span className="text-[10px] font-semibold text-gray-400 uppercase bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">Today</span>
             </div>
             {messages.map(msg => (
               <div key={msg.id} className={`flex ${msg.me ? 'justify-end' : 'justify-start'}`}>
                 <div className={`max-w-[70%] rounded-2xl p-4 shadow-sm ${msg.me ? 'bg-primary text-white rounded-tr-none' : 'bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-tl-none border border-gray-100 dark:border-gray-700'}`}>
                   <p className="text-sm leading-relaxed">{msg.text}</p>
-                  <div className={`text-[10px] mt-1 font-bold uppercase opacity-60 ${msg.me ? 'text-right' : 'text-left'}`}>
+                  <div className={`text-[10px] mt-1 font-semibold uppercase opacity-60 ${msg.me ? 'text-right' : 'text-left'}`}>
                     {msg.time}
                   </div>
                 </div>

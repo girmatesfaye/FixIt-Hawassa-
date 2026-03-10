@@ -60,8 +60,8 @@ const VerifyPage: React.FC<VerifyPageProps> = ({ onVerify }) => {
             </div>
 
             <div className="text-center mb-8 w-full">
-              <h1 className="text-[#120e1b] dark:text-white tracking-tight text-[28px] font-bold mb-3">Verify Phone</h1>
-              <p className="text-slate-500 dark:text-slate-400 text-base">
+              <h1 className="text-[#120e1b] dark:text-white tracking-tight text-2xl font-bold mb-3">Verify Phone</h1>
+              <p className="text-slate-500 dark:text-slate-400 text-sm">
                 We sent a 6-digit code to your Hawassa mobile number.
               </p>
             </div>
@@ -91,7 +91,7 @@ const VerifyPage: React.FC<VerifyPageProps> = ({ onVerify }) => {
 
             <button 
               onClick={handleVerify}
-              className="w-full flex cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-6 bg-primary hover:bg-primary-dark text-white text-base font-bold shadow-lg shadow-primary/25 transition-all active:scale-[0.98]"
+              className="w-full flex cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-6 bg-primary hover:bg-primary-dark text-white text-sm font-semibold shadow-sm transition-all active:scale-[0.98]"
             >
               Verify & Get Started
             </button>

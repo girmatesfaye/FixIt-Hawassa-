@@ -24,7 +24,7 @@ const UserManagementPage: React.FC = () => {
   return (
     <div className="p-8 space-y-8">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-black text-[#120e1b]">User Management</h1>
+        <h1 className="text-xl font-bold text-[#120e1b]">User Management</h1>
       </div>
 
       {/* Stats Grid */}
@@ -32,19 +32,19 @@ const UserManagementPage: React.FC = () => {
         {stats.map((stat, i) => (
           <div key={i} className={`bg-white rounded-2xl p-6 shadow-sm border-l-4 ${i === 0 || i === 1 ? 'border-red-500' : 'border-gray-50'} relative overflow-hidden`}>
             <div className="flex justify-between items-start">
-              <div className="space-y-1">
-                <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">{stat.label}</p>
+              <div className="space-y-1.5">
+                <p className="text-xs font-medium text-gray-500">{stat.label}</p>
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl font-black text-[#120e1b]">{stat.value}</span>
+                  <span className="text-2xl font-bold text-[#120e1b]">{stat.value}</span>
                   {stat.change && (
-                    <span className="text-[10px] font-black text-green-500 flex items-center">
-                      <span className="material-symbols-outlined text-xs">trending_up</span>
+                    <span className="text-xs font-semibold text-green-600 flex items-center bg-green-50 px-2 py-0.5 rounded-full border border-green-100">
+                      <span className="material-symbols-outlined text-[12px] mr-1">trending_up</span>
                       {stat.change}
                     </span>
                   )}
                 </div>
                 {stat.sub && (
-                  <p className={`text-[10px] font-bold uppercase tracking-widest ${stat.alert ? 'text-red-500' : 'text-gray-400'}`}>
+                  <p className={`text-xs font-medium ${stat.alert ? 'text-red-500' : 'text-gray-400'}`}>
                     {stat.alert && '❗ '} {stat.sub}
                   </p>
                 )}
@@ -62,25 +62,25 @@ const UserManagementPage: React.FC = () => {
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-center gap-3">
             <span className="material-symbols-outlined text-red-500">warning</span>
-            <h3 className="text-lg font-black text-[#120e1b]">Recent User Reports</h3>
+            <h3 className="text-base font-semibold text-[#120e1b]">Recent User Reports</h3>
           </div>
-          <button className="text-xs font-bold text-red-500 hover:underline uppercase tracking-widest">View All Reports</button>
+          <button className="text-sm font-medium text-red-600 hover:text-red-700 hover:underline transition-colors">View All Reports</button>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {recentReports.map((report, i) => (
             <div key={i} className="bg-gray-50 rounded-2xl p-6 border border-gray-100 space-y-4">
               <div className="flex justify-between items-center">
-                <span className="text-[10px] font-black text-red-500 uppercase tracking-widest">{report.type}</span>
-                <span className="text-[10px] font-bold text-gray-400">{report.time}</span>
+                <span className="text-[10px] font-semibold text-red-600 uppercase tracking-wider bg-red-50 px-2.5 py-1 rounded border border-red-100">{report.type}</span>
+                <span className="text-xs font-medium text-gray-500">{report.time}</span>
               </div>
-              <p className="text-xs text-gray-600 leading-relaxed italic">{report.text}</p>
+              <p className="text-sm text-gray-700 leading-relaxed italic">{report.text}</p>
               <div className="flex items-center justify-between pt-2 border-t border-gray-100">
                 <div className="flex items-center gap-2">
-                  <span className="text-[10px] font-bold text-gray-400 uppercase">Against:</span>
-                  <span className="text-[10px] font-black text-[#120e1b]">{report.against}</span>
+                  <span className="text-xs font-medium text-gray-500">Against:</span>
+                  <span className="text-sm font-semibold text-[#120e1b]">{report.against}</span>
                 </div>
-                <button className="text-[10px] font-black text-red-500 uppercase tracking-widest hover:underline">Review</button>
+                <button className="text-xs font-medium text-red-600 hover:text-red-700 hover:underline transition-colors">Review</button>
               </div>
             </div>
           ))}
@@ -97,12 +97,12 @@ const UserManagementPage: React.FC = () => {
             className="w-full h-11 pl-10 pr-4 bg-gray-50 border-none rounded-xl text-sm focus:ring-1 focus:ring-red-500" 
           />
         </div>
-        <button className="h-11 px-6 rounded-xl border border-gray-100 flex items-center gap-2 text-sm font-bold text-gray-600 hover:bg-gray-50 transition-colors">
-          <span className="material-symbols-outlined">filter_list</span>
+        <button className="h-10 px-5 rounded-lg border border-gray-200 flex items-center justify-center gap-2 text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors w-full md:w-auto">
+          <span className="material-symbols-outlined text-[18px]">filter_list</span>
           Filter
         </button>
-        <button className="h-11 px-6 bg-[#120e1b] text-white rounded-xl flex items-center gap-2 text-sm font-bold hover:bg-black transition-all">
-          <span className="material-symbols-outlined">person_search</span>
+        <button className="h-10 px-5 bg-primary text-white rounded-lg flex items-center justify-center gap-2 text-sm font-medium hover:bg-primary-dark shadow-sm transition-all w-full md:w-auto">
+          <span className="material-symbols-outlined text-[18px]">person_search</span>
           Search User
         </button>
       </div>
@@ -111,13 +111,13 @@ const UserManagementPage: React.FC = () => {
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
         <table className="w-full text-left">
           <thead>
-            <tr className="bg-gray-50 border-b border-gray-100">
-              <th className="px-6 py-4 text-[10px] font-black text-gray-400 uppercase tracking-widest">User</th>
-              <th className="px-6 py-4 text-[10px] font-black text-gray-400 uppercase tracking-widest">Role</th>
-              <th className="px-6 py-4 text-[10px] font-black text-gray-400 uppercase tracking-widest">Status</th>
-              <th className="px-6 py-4 text-[10px] font-black text-gray-400 uppercase tracking-widest">Joined Date</th>
-              <th className="px-6 py-4 text-[10px] font-black text-gray-400 uppercase tracking-widest">Reports</th>
-              <th className="px-6 py-4 text-[10px] font-black text-gray-400 uppercase tracking-widest text-right">Actions</th>
+            <tr className="bg-gray-50 border-b border-gray-200">
+              <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">User</th>
+              <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Role</th>
+              <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Status</th>
+              <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Joined Date</th>
+              <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Reports</th>
+              <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider text-right">Actions</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-50">
@@ -127,53 +127,53 @@ const UserManagementPage: React.FC = () => {
                   <div className="flex items-center gap-3">
                     <img src={user.avatar} className="size-10 rounded-full bg-gray-100" alt="" />
                     <div className="flex flex-col">
-                      <span className="text-sm font-black text-[#120e1b]">{user.name}</span>
-                      <span className="text-[10px] font-bold text-gray-400">{user.email}</span>
+                      <span className="text-sm font-semibold text-[#120e1b]">{user.name}</span>
+                      <span className="text-xs text-gray-500">{user.email}</span>
                     </div>
                   </div>
                 </td>
                 <td className="px-6 py-4">
-                  <span className={`px-3 py-1 rounded-full text-[10px] font-bold ${
+                  <span className={`px-2.5 py-1 rounded-md text-xs font-medium ${
                     user.role.includes('Worker') 
-                      ? 'bg-blue-50 text-blue-600 border border-blue-100' 
-                      : 'bg-gray-100 text-gray-600 border border-gray-200'
+                      ? 'bg-blue-50 text-blue-700 border border-blue-200' 
+                      : 'bg-gray-50 text-gray-700 border border-gray-200'
                     }`}>
                     {user.role}
                   </span>
                 </td>
                 <td className="px-6 py-4">
-                  <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-widest ${
-                    user.status === 'Active' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
+                  <span className={`px-2 py-0.5 rounded text-xs font-medium border ${
+                    user.status === 'Active' ? 'bg-green-50 text-green-700 border-green-200' : 'bg-red-50 text-red-700 border-red-200'
                   }`}>
                     {user.status}
                   </span>
                 </td>
-                <td className="px-6 py-4 text-xs font-bold text-gray-500">
+                <td className="px-6 py-4 text-sm text-gray-600">
                   {user.joined}
                 </td>
                 <td className="px-6 py-4">
                   {user.reports ? (
-                    <span className="size-6 rounded-full bg-red-100 text-red-600 text-[10px] font-black flex items-center justify-center">
+                    <span className="size-6 rounded-full bg-red-50 border border-red-200 text-red-600 text-xs font-semibold flex items-center justify-center">
                       {user.reports}
                     </span>
                   ) : (
-                    <span className="text-xs text-gray-300 font-bold">-</span>
+                    <span className="text-sm text-gray-400 font-medium">-</span>
                   )}
                 </td>
                 <td className="px-6 py-4">
                   <div className="flex items-center justify-end gap-2">
-                    <button className={`h-9 px-4 rounded-lg text-xs font-black uppercase tracking-widest transition-all ${
+                    <button className={`h-8 px-3 rounded text-xs font-medium transition-all border ${
                       user.status === 'Active' 
-                        ? 'bg-[#120e1b] text-white hover:bg-black' 
-                        : 'border-2 border-green-500 text-green-500 hover:bg-green-50'
+                        ? 'bg-white border-gray-300 text-gray-700 hover:bg-gray-50' 
+                        : 'bg-green-50 border-green-200 text-green-700 hover:bg-green-100'
                     }`}>
                       {user.status === 'Active' ? 'Suspend' : 'Activate'}
                     </button>
-                    <button className="size-9 rounded-lg flex items-center justify-center text-gray-400 hover:text-red-500 transition-colors">
-                      <span className="material-symbols-outlined text-[20px]">edit</span>
+                    <button className="size-8 rounded flex items-center justify-center text-gray-400 hover:text-[#120e1b] hover:bg-gray-100 transition-colors">
+                      <span className="material-symbols-outlined text-[18px]">edit</span>
                     </button>
-                    <button className="size-9 rounded-lg flex items-center justify-center text-gray-400 hover:text-red-500 transition-colors">
-                      <span className="material-symbols-outlined text-[20px]">visibility</span>
+                    <button className="size-8 rounded flex items-center justify-center text-gray-400 hover:text-[#120e1b] hover:bg-gray-100 transition-colors">
+                      <span className="material-symbols-outlined text-[18px]">visibility</span>
                     </button>
                   </div>
                 </td>
@@ -183,15 +183,15 @@ const UserManagementPage: React.FC = () => {
         </table>
 
         {/* Pagination */}
-        <div className="px-6 py-4 bg-gray-50 border-t border-gray-100 flex items-center justify-between">
-          <p className="text-xs font-bold text-gray-400">Showing <span className="text-[#120e1b]">1-3</span> of <span className="text-[#120e1b]">1,240</span> results</p>
+        <div className="px-6 py-4 bg-gray-50 border-t border-gray-200 flex items-center justify-between">
+          <p className="text-sm text-gray-500">Showing <span className="font-medium text-[#120e1b]">1-3</span> of <span className="font-medium text-[#120e1b]">1,240</span> results</p>
           <div className="flex items-center gap-1">
-            <button className="h-9 px-3 rounded-lg text-xs font-bold text-gray-400 hover:text-red-500 disabled:opacity-50">Previous</button>
-            <button className="size-9 rounded-lg bg-red-500 text-white text-xs font-black">1</button>
-            <button className="size-9 rounded-lg text-xs font-bold text-gray-500 hover:bg-gray-100 transition-colors">2</button>
-            <span className="px-2 text-gray-300">...</span>
-            <button className="size-9 rounded-lg text-xs font-bold text-gray-500 hover:bg-gray-100 transition-colors">10</button>
-            <button className="h-9 px-3 rounded-lg text-xs font-bold text-gray-500 hover:text-red-500">Next</button>
+            <button className="h-8 px-3 rounded text-sm font-medium text-gray-500 hover:text-[#120e1b] hover:bg-gray-100 disabled:opacity-50 transition-colors">Previous</button>
+            <button className="size-8 rounded bg-primary text-white text-sm font-medium">1</button>
+            <button className="size-8 rounded text-sm font-medium text-gray-600 hover:bg-gray-200 transition-colors">2</button>
+            <span className="px-1 text-gray-400">...</span>
+            <button className="size-8 rounded text-sm font-medium text-gray-600 hover:bg-gray-200 transition-colors">10</button>
+            <button className="h-8 px-3 rounded text-sm font-medium text-gray-500 hover:text-[#120e1b] hover:bg-gray-100 transition-colors">Next</button>
           </div>
         </div>
       </div>
